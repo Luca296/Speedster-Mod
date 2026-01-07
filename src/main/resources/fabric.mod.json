@@ -27,6 +27,11 @@
       "com.luca296.speedster.component.SpeedsterComponents"
     ]
   },
+  "custom": {
+    "cardinal-components": [
+      "speedster:speedster_data"
+    ]
+  },
   "mixins": [
     "speedster.mixins.json",
     {
