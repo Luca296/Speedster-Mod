@@ -156,4 +156,4 @@ Pull requests and feature suggestions are welcome.
 ## Contact
 Created by **Luca296**.  
 Feedback, ideas, and collaboration are encouraged.
-
+**Note:** I'm still a relatively young student, so development might slow down sometimes when school gets busy.
