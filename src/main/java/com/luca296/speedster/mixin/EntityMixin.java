@@ -25,25 +25,6 @@ public abstract class EntityMixin {
     /**
      * Allow players to pass through blocks while Phase Shift is active.
      */
-    @Inject(method = "isCollidingWithStateAtPos", at = @At("HEAD"), cancellable = true)
-    private void speedster$onCollisionCheck(net.minecraft.util.math.BlockPos pos, 
-                                             net.minecraft.block.BlockState state,
-                                             CallbackInfoReturnable<Boolean> cir) {
-        Entity entity = (Entity) (Object) this;
-        
-        if (!(entity instanceof PlayerEntity player)) return;
-        
-        SpeedsterData data = SpeedsterComponents.getData(player);
-        
-        if (PhaseShiftAbility.canPhaseThrough(player, data)) {
-            // Allow passing through solid blocks (but not bedrock)
-            if (!state.isOf(net.minecraft.block.Blocks.BEDROCK) && 
-                !state.isOf(net.minecraft.block.Blocks.BARRIER)) {
-                cir.setReturnValue(false);
-            }
-        }
-    }
-
     /**
      * Modify collision shape checking for phasing players.
      */
