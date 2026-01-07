@@ -74,7 +74,7 @@ public class SpeedsterModMenuIntegration implements ModMenuApi {
         ConfigCategory chargeCategory = builder.getOrCreateCategory(Text.translatable("config.speedster.category.charge"));
 
         chargeCategory.addEntry(entryBuilder.startFloatField(Text.translatable("config.speedster.maxCharge"), config.maxCharge)
-            .setDefaultValue(100.0f)
+            .setDefaultValue(10.0f)
             .setMin(10.0f)
             .setMax(500.0f)
             .setSaveConsumer(val -> config.maxCharge = val)

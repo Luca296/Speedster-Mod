@@ -1,7 +1,7 @@
 package com.luca296.speedster.client;
 
 import com.luca296.speedster.Speedster;
-import com.luca296.speedster.network.SpeedsterNetworking;
+import com.luca296.speedster.network.SpeedsterClientNetworking;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -53,20 +53,20 @@ public class SpeedsterKeybindings {
 
     public static void handleKeyPresses() {
         while (PHASE_SHIFT.wasPressed()) {
-            SpeedsterNetworking.sendAbilityUse("phase_shift");
+            SpeedsterClientNetworking.sendAbilityUse("phase_shift");
         }
 
         while (TIME_DILATION.wasPressed()) {
-            SpeedsterNetworking.sendAbilityUse("time_dilation");
+            SpeedsterClientNetworking.sendAbilityUse("time_dilation");
         }
 
         while (AOE_STUN.wasPressed()) {
-            SpeedsterNetworking.sendAbilityUse("aoe_stun");
+            SpeedsterClientNetworking.sendAbilityUse("aoe_stun");
         }
 
         while (TOGGLE_SPEEDSTER.wasPressed()) {
             // Toggle is handled client-side and synced
-            SpeedsterNetworking.sendToggleSpeedster(true); // Will be implemented properly
+            SpeedsterClientNetworking.sendToggleSpeedster(true); // Will be implemented properly
         }
     }
 }

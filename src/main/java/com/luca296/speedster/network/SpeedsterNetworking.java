@@ -6,7 +6,6 @@ import com.luca296.speedster.data.SpeedsterData;
 import com.luca296.speedster.ability.PhaseShiftAbility;
 import com.luca296.speedster.ability.TimeDilationAbility;
 import com.luca296.speedster.ability.AoeStunAbility;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.RegistryByteBuf;
@@ -111,33 +110,7 @@ public class SpeedsterNetworking {
         });
     }
 
-    // === Client-side Registration ===
-    
-    public static void registerClientPackets() {
-        Speedster.LOGGER.info("Registering client packets...");
-        
-        // Handle sync data from server
-        ClientPlayNetworking.registerGlobalReceiver(SyncDataPayload.ID, (payload, context) -> {
-            context.client().execute(() -> {
-                if (context.player() != null) {
-                    SpeedsterData data = SpeedsterComponents.getData(context.player());
-                    data.setMomentum(payload.momentum());
-                    data.setCharge(payload.charge());
-                    data.setHeat(payload.heat());
-                }
-            });
-        });
-    }
-
-    // === Send Methods ===
-    
-    public static void sendAbilityUse(String abilityId) {
-        ClientPlayNetworking.send(new AbilityUsePayload(abilityId));
-    }
-
-    public static void sendToggleSpeedster(boolean enabled) {
-        ClientPlayNetworking.send(new ToggleSpeedsterPayload(enabled));
-    }
+    // === Send Methods (Server-side) ===
 
     public static void syncToClient(ServerPlayerEntity player, SpeedsterData data) {
         ServerPlayNetworking.send(player, new SyncDataPayload(

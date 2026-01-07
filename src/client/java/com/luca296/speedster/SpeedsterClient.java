@@ -3,7 +3,7 @@ package com.luca296.speedster;
 import com.luca296.speedster.client.SpeedsterKeybindings;
 import com.luca296.speedster.client.handler.SpeedsterClientTickHandler;
 import com.luca296.speedster.client.render.SpeedsterHudRenderer;
-import com.luca296.speedster.network.SpeedsterNetworking;
+import com.luca296.speedster.network.SpeedsterClientNetworking;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -27,7 +27,7 @@ public class SpeedsterClient implements ClientModInitializer {
         HudRenderCallback.EVENT.register(SpeedsterHudRenderer::render);
 
         // Register client-side networking
-        SpeedsterNetworking.registerClientPackets();
+        SpeedsterClientNetworking.registerClientPackets();
 
         Speedster.LOGGER.info("Speedster Client initialized!");
     }
