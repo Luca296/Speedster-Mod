@@ -1,5 +1,6 @@
 {
   "required": true,
+  "refmap": "speedster-mod-refmap.json",
   "package": "com.luca296.speedster.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [

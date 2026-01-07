@@ -32,6 +32,11 @@ repositories {
 loom {
     splitEnvironmentSourceSets()
 
+    mixin {
+        add sourceSets.main, "speedster-mod-refmap.json"
+        add sourceSets.client, "client-speedster-mod-refmap.json"
+    }
+
     mods {
         "speedster" {
             sourceSet sourceSets.main

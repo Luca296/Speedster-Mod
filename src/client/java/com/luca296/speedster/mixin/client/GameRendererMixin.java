@@ -40,7 +40,7 @@ public abstract class GameRendererMixin {
 
     @Inject(method = "getFov", at = @At("RETURN"), cancellable = true)
     private void speedster$modifyFov(Camera camera, float tickDelta, 
-                                      boolean changingFov, CallbackInfoReturnable<Float> cir) {
+                                      boolean changingFov, CallbackInfoReturnable<Double> cir) {
         if (client.player == null) return;
         
         SpeedsterData data = SpeedsterComponents.getData(client.player);
@@ -50,8 +50,8 @@ public abstract class GameRendererMixin {
         // Increase FOV based on momentum for speed effect
         float momentumPercent = data.getMomentumPercent();
         if (momentumPercent > 0.3f) {
-            float baseFov = cir.getReturnValue();
-            float fovBoost = (momentumPercent - 0.3f) * 30.0f; // Up to +21 FOV at max speed
+            double baseFov = cir.getReturnValue();
+            double fovBoost = (momentumPercent - 0.3f) * 30.0; // Up to +21 FOV at max speed
             cir.setReturnValue(baseFov + fovBoost);
         }
     }

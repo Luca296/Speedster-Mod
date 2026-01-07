@@ -1,5 +1,6 @@
 {
   "required": true,
+  "refmap": "client-speedster-mod-refmap.json",
   "package": "com.luca296.speedster.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
