@@ -2,9 +2,12 @@ package com.luca296.speedster.client.handler;
 
 import com.luca296.speedster.client.SpeedsterKeybindings;
 import com.luca296.speedster.component.SpeedsterComponents;
+import com.luca296.speedster.config.SpeedsterConfig;
 import com.luca296.speedster.data.SpeedsterData;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.util.math.Vec3d;
 
 /**
  * Client-side tick handler for Speedster mod.
@@ -24,9 +27,20 @@ public class SpeedsterClientTickHandler {
         SpeedsterData data = SpeedsterComponents.getData(player);
         
         if (!data.isSpeedsterEnabled()) return;
+
+        SpeedsterConfig config = SpeedsterConfig.get();
         
         // Client-side prediction for smooth visuals
         updateClientPrediction(player, data);
+
+        // Client-side particles / feedback
+        if (config.enableSpeedTrails && data.getMomentumPercent() > 0.5f && player.isSprinting()) {
+            spawnSpeedParticles(player, data);
+        }
+
+        if (config.enableSparkParticles && data.isDrifting()) {
+            spawnDriftParticles(player);
+        }
     }
 
     private static void updateClientPrediction(ClientPlayerEntity player, SpeedsterData data) {
@@ -63,6 +77,46 @@ public class SpeedsterClientTickHandler {
             data.setDrifting(angleDiff > Math.PI / 4); // 45+ degree turn
         } else {
             data.setDrifting(false);
+        }
+    }
+
+    private static void spawnSpeedParticles(ClientPlayerEntity player, SpeedsterData data) {
+        Vec3d velocity = player.getVelocity();
+        double speed = velocity.horizontalLength();
+
+        if (speed <= 0.3) return;
+
+        for (int i = 0; i < (int) (data.getMomentumPercent() * 3); i++) {
+            double offsetX = (Math.random() - 0.5) * 0.5;
+            double offsetY = Math.random() * 0.5;
+            double offsetZ = (Math.random() - 0.5) * 0.5;
+
+            player.getWorld().addParticle(
+                ParticleTypes.CLOUD,
+                player.getX() - velocity.x * 0.5 + offsetX,
+                player.getY() + offsetY,
+                player.getZ() - velocity.z * 0.5 + offsetZ,
+                -velocity.x * 0.1,
+                0.02,
+                -velocity.z * 0.1
+            );
+        }
+    }
+
+    private static void spawnDriftParticles(ClientPlayerEntity player) {
+        for (int i = 0; i < 3; i++) {
+            double offsetX = (Math.random() - 0.5) * 0.3;
+            double offsetZ = (Math.random() - 0.5) * 0.3;
+
+            player.getWorld().addParticle(
+                ParticleTypes.ELECTRIC_SPARK,
+                player.getX() + offsetX,
+                player.getY() + 0.1,
+                player.getZ() + offsetZ,
+                (Math.random() - 0.5) * 0.2,
+                0.05,
+                (Math.random() - 0.5) * 0.2
+            );
         }
     }
 

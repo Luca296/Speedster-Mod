@@ -111,6 +111,7 @@ Cool down by stopping or touching water.
 - **Java 21**  
 - **Fabric Loader**
 - **Fabric API / Architectury**  
+- **Fabric events** for client tick visuals/particles  
 - **Mixins** for movement, rendering, and collision logic  
 - **Cloth Config API** for in‑game settings  
 - **Custom networking packets** for syncing visuals and combat logic  

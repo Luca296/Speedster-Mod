@@ -55,7 +55,7 @@
 - [ ] Implement end-rod outline effect for phasing
 - [ ] Add Speed Vision glow rendering
 
-## Phase 8: Networking & Multiplayer
+## Phase 8: Networking & Multiplayer (Low Priority)
 - [x] Create custom packets for ability sync
 - [ ] Implement server-authoritative movement validation
 - [ ] Sync visual effects to other players
@@ -96,14 +96,3 @@
 **Phase:** 3-7 - Core Systems Complete  
 **Status:** Ready for Testing  
 **Last Updated:** 2026-01-07
-
-### Completed This Session:
-- Full project scaffold with Gradle, Fabric API, Cloth Config, Cardinal Components
-- Core SpeedsterData class with momentum/charge/heat systems
-- All keybindings (V=Phase, G=Time, R=Stun, H=Toggle)
-- PlayerEntity, LivingEntity, Entity mixins for movement
-- Client mixins for particles, FOV, vignette effects
-- HUD renderer for meters and cooldowns
-- Config screen via Mod Menu
-- Networking for ability sync
-- All ability classes (Phase, Time Dilation, AoE Stun, Chain Lightning)
