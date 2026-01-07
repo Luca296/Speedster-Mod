@@ -1,73 +1,73 @@
 # Speedster-Mod Development Roadmap
 
 ## Phase 1: Project Setup
-- [ ] Initialize Fabric mod project structure
-- [ ] Configure build.gradle with dependencies (Fabric API, Cloth Config, Architectury)
-- [ ] Create fabric.mod.json with mod metadata
-- [ ] Set up Mixin configuration
-- [ ] Create main mod initializer classes (client/server)
+- [x] Initialize Fabric mod project structure
+- [x] Configure build.gradle with dependencies (Fabric API, Cloth Config, Architectury)
+- [x] Create fabric.mod.json with mod metadata
+- [x] Set up Mixin configuration
+- [x] Create main mod initializer classes (client/server)
 
 ## Phase 2: Core Speed System
-- [ ] Create SpeedsterData class to track player state (momentum, charge, heat)
-- [ ] Implement IEntityDataSaver interface for persistent data
-- [ ] Create SpeedsterDataComponent for data attachment
-- [ ] Add Mixin to PlayerEntity.tickMovement() for momentum mechanics
-- [ ] Implement dynamic speed scaling (acceleration over time while sprinting)
-- [ ] Add momentum-based physics (velocity vectors, drift mechanics)
-- [ ] Create speed tier system (thresholds for abilities)
+- [x] Create SpeedsterData class to track player state (momentum, charge, heat)
+- [x] Implement IEntityDataSaver interface for persistent data
+- [x] Create SpeedsterDataComponent for data attachment
+- [x] Add Mixin to PlayerEntity.tickMovement() for momentum mechanics
+- [x] Implement dynamic speed scaling (acceleration over time while sprinting)
+- [x] Add momentum-based physics (velocity vectors, drift mechanics)
+- [x] Create speed tier system (thresholds for abilities)
 
 ## Phase 3: Movement Abilities
-- [ ] Implement hydroplaning (water/lava running at 75%+ speed)
-- [ ] Add wall running mechanics (horizontal to vertical momentum)
-- [ ] Create inertia drift system (sliding on sharp turns)
-- [ ] Add spark particle effects for drifting
-- [ ] Implement low friction at high speeds
+- [x] Implement hydroplaning (water/lava running at 75%+ speed)
+- [x] Add wall running mechanics (horizontal to vertical momentum)
+- [x] Create inertia drift system (sliding on sharp turns)
+- [x] Add spark particle effects for drifting
+- [x] Implement low friction at high speeds
 - [ ] Add collision detection overrides for movement abilities
 
 ## Phase 4: Combat Mechanics
-- [ ] Implement velocity-based damage scaling
-- [ ] Add knockback multiplier based on speed (5+ blocks at max)
-- [ ] Create Static Discharge charge system
-- [ ] Implement chain lightning melee attack (3 enemy chain)
-- [ ] Add AoE stun ability (R key)
+- [x] Implement velocity-based damage scaling
+- [x] Add knockback multiplier based on speed (5+ blocks at max)
+- [x] Create Static Discharge charge system
+- [x] Implement chain lightning melee attack (3 enemy chain)
+- [x] Add AoE stun ability (R key)
 - [ ] Create Vortex Vacuum mechanic (circular running pulls entities)
 
 ## Phase 5: Defense & Utility Abilities
-- [ ] Implement Phase Shift ability (V key) - pass through blocks
-- [ ] Add phase shift cooldown and duration management
-- [ ] Create Time Dilation ability (G key) - client-side slow-motion
+- [x] Implement Phase Shift ability (V key) - pass through blocks
+- [x] Add phase shift cooldown and duration management
+- [x] Create Time Dilation ability (G key) - client-side slow-motion
 - [ ] Implement Speed-Sense (entity detection within 25 blocks)
 - [ ] Add spectral glow effect on nearby entities
 
 ## Phase 6: Balancing & Weaknesses
-- [ ] Implement armor requirement (damage without armor at high speed)
-- [ ] Create friction overheat system (heat meter)
-- [ ] Add smoke particles at heat Stage 1
-- [ ] Implement auto-ignite at heat Stage 2
-- [ ] Add water cooling mechanic
+- [x] Implement armor requirement (damage without armor at high speed)
+- [x] Create friction overheat system (heat meter)
+- [x] Add smoke particles at heat Stage 1
+- [x] Implement auto-ignite at heat Stage 2
+- [x] Add water cooling mechanic
 
 ## Phase 7: Visual Effects
-- [ ] Create speed trail afterimages (0.3s fade)
-- [ ] Implement yellow vignette effect at high speed
+- [x] Create speed trail afterimages (0.3s fade)
+- [x] Implement yellow vignette effect at high speed
 - [ ] Add optional motion blur shader
-- [ ] Create cloud/flash particles while running
-- [ ] Add electric spark particles for abilities
+- [x] Create cloud/flash particles while running
+- [x] Add electric spark particles for abilities
 - [ ] Implement end-rod outline effect for phasing
 - [ ] Add Speed Vision glow rendering
 
 ## Phase 8: Networking & Multiplayer
-- [ ] Create custom packets for ability sync
+- [x] Create custom packets for ability sync
 - [ ] Implement server-authoritative movement validation
 - [ ] Sync visual effects to other players
 - [ ] Handle combat interactions in multiplayer
 - [ ] Add proper phase shift PvP handling
 
 ## Phase 9: Configuration & Polish
-- [ ] Integrate Cloth Config API
-- [ ] Create config screen with all settings
-- [ ] Add keybind configuration
-- [ ] Implement enable/disable toggles for effects
-- [ ] Add numeric value adjustments (speed caps, cooldowns)
+- [x] Integrate Cloth Config API
+- [x] Create config screen with all settings
+- [x] Add keybind configuration
+- [x] Implement enable/disable toggles for effects
+- [x] Add numeric value adjustments (speed caps, cooldowns)
 
 ## Phase 10: Speedster Suit (Optional)
 - [ ] Design Speedster Suit armor set
@@ -93,6 +93,17 @@
 ---
 
 ## Current Progress
-**Phase:** 1 - Project Setup  
-**Status:** In Progress  
+**Phase:** 3-7 - Core Systems Complete  
+**Status:** Ready for Testing  
 **Last Updated:** 2026-01-07
+
+### Completed This Session:
+- Full project scaffold with Gradle, Fabric API, Cloth Config, Cardinal Components
+- Core SpeedsterData class with momentum/charge/heat systems
+- All keybindings (V=Phase, G=Time, R=Stun, H=Toggle)
+- PlayerEntity, LivingEntity, Entity mixins for movement
+- Client mixins for particles, FOV, vignette effects
+- HUD renderer for meters and cooldowns
+- Config screen via Mod Menu
+- Networking for ability sync
+- All ability classes (Phase, Time Dilation, AoE Stun, Chain Lightning)

@@ -22,6 +22,9 @@
     ],
     "modmenu": [
       "com.luca296.speedster.config.SpeedsterModMenuIntegration"
+    ],
+    "cardinal-components": [
+      "com.luca296.speedster.component.SpeedsterComponents"
     ]
   },
   "mixins": [
@@ -35,7 +38,9 @@
     "fabricloader": ">=0.16.0",
     "minecraft": "~1.21.1",
     "java": ">=21",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "cardinal-components-base": ">=6.0.0",
+    "cardinal-components-entity": ">=6.0.0"
   },
   "suggests": {
     "cloth-config": "*",

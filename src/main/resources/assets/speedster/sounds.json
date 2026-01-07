@@ -1,0 +1,87 @@
+{
+  "speed_whoosh": {
+    "subtitle": "subtitles.speedster.speed_whoosh",
+    "sounds": [
+      {
+        "name": "speedster:speed_whoosh",
+        "stream": false
+      }
+    ]
+  },
+  "lightning_crack": {
+    "subtitle": "subtitles.speedster.lightning_crack",
+    "sounds": [
+      {
+        "name": "minecraft:entity/lightning_bolt/thunder",
+        "volume": 0.5,
+        "pitch": 1.5
+      }
+    ]
+  },
+  "phase_shift": {
+    "subtitle": "subtitles.speedster.phase_shift",
+    "sounds": [
+      {
+        "name": "minecraft:entity/enderman/teleport",
+        "volume": 0.8,
+        "pitch": 1.2
+      }
+    ]
+  },
+  "time_dilate": {
+    "subtitle": "subtitles.speedster.time_dilate",
+    "sounds": [
+      {
+        "name": "minecraft:block/beacon/ambient",
+        "volume": 0.6,
+        "pitch": 0.5
+      }
+    ]
+  },
+  "charge_build": {
+    "subtitle": "subtitles.speedster.charge_build",
+    "sounds": [
+      {
+        "name": "minecraft:entity/lightning_bolt/impact",
+        "volume": 0.3,
+        "pitch": 2.0
+      }
+    ]
+  },
+  "overheat": {
+    "subtitle": "subtitles.speedster.overheat",
+    "sounds": [
+      {
+        "name": "minecraft:block/fire/ambient",
+        "volume": 0.5
+      }
+    ]
+  },
+  "wall_run": {
+    "subtitle": "subtitles.speedster.wall_run",
+    "sounds": [
+      {
+        "name": "minecraft:block/stone/step1",
+        "pitch": 1.5
+      }
+    ]
+  },
+  "hydroplane": {
+    "subtitle": "subtitles.speedster.hydroplane",
+    "sounds": [
+      {
+        "name": "minecraft:entity/boat/paddle_water",
+        "pitch": 1.3
+      }
+    ]
+  },
+  "drift": {
+    "subtitle": "subtitles.speedster.drift",
+    "sounds": [
+      {
+        "name": "minecraft:block/gravel/step1",
+        "pitch": 1.5
+      }
+    ]
+  }
+}
