@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.luca296.speedster.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PlayerEntityMixin",
+    "LivingEntityMixin",
+    "EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

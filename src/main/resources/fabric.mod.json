@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "speedster",
+  "version": "${version}",
+  "name": "Speedster Mod",
+  "description": "Transform into a physics-breaking speedster with momentum-based mechanics, electrical abilities, and superhero movement!",
+  "authors": [
+    "Luca296"
+  ],
+  "contact": {
+    "sources": "https://github.com/Luca296/Speedster-Mod"
+  },
+  "license": "MIT",
+  "icon": "assets/speedster/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.luca296.speedster.Speedster"
+    ],
+    "client": [
+      "com.luca296.speedster.SpeedsterClient"
+    ],
+    "modmenu": [
+      "com.luca296.speedster.config.SpeedsterModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "speedster.mixins.json",
+    {
+      "config": "speedster.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config": "*",
+    "modmenu": "*"
+  }
+}
