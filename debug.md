@@ -437,5 +437,3 @@ Several systems unlock/activate at these approximate thresholds:
 - That’s currently expected: the implementation is mostly overlays/messages/state.
 
 ---
-
-If you want, I can also generate a **one-page printable checklist** version of this guide for quick “pass/fail” testing while you play.
