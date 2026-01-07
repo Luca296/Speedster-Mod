@@ -1,7 +1,7 @@
 # Speedster-Mod – Minecraft Mod (1.21.1)
 
 A high‑speed movement and combat overhaul that turns the player into a physics‑breaking speedster.  
-Designed for **Minecraft Java Edition 1.21.1** using **Fabric** or **NeoForge**.
+Designed for **Minecraft Java Edition 1.21.1** using **Fabric**.
 
 This mod focuses on *momentum‑based movement*, *kinetic combat*, *time dilation*, and *stylized visual effects* to deliver a superhero‑level gameplay experience.
 
